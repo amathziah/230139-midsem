@@ -1,0 +1,64 @@
+{
+  "student": {
+    "name": "Jamathziah",
+    "roll_number": "230139",
+    "email": "jamathziah.23csai@nst.rishihood.edu.in"
+  },
+  "assignment": {
+    "course": "Advanced Machine Learning",
+    "part": "Part A - Research Paper Selection",
+    "submission_date": "2026-03-01"
+  },
+  "llm_tool_used": "Claude (claude.ai) — claude-sonnet-4",
+  "total_interactions": 4,
+  "llm_usage": [
+    {
+      "id": 1,
+      "purpose": "Clarifying Part A constraints and building a selection checklist",
+      "my_reasoning_before_prompt": "Before using Claude, I read the exam document carefully and noted the key constraints: publication year 2009–2012, CORE A* venue, classical ML only, methodological contribution, no deep learning, no surveys. I wanted to consolidate these into a checklist I could apply systematically.",
+      "prompt": "I am selecting a research paper for my Advanced Machine Learning mid-semester exam (Part A). The constraints are: published 2008–2013 (preferably 2010–2012), from a CORE A* venue (NeurIPS, ICML, AISTATS, KDD, JMLR), primary contribution must be a classical method in SVM, GMM, or Time Series. Deep learning papers, survey papers, and purely empirical papers are disallowed. Can you help me structure a checklist to evaluate candidate papers?",
+      "response_summary": "Claude provided a structured checklist covering venue verification, year range, methodological novelty, reproducibility, and compute feasibility. This helped me evaluate papers systematically rather than arbitrarily.",
+      "how_i_used_it": "I used the checklist as a filter when independently browsing ICML and JMLR paper listings for 2009–2012. I did not ask Claude to pick a paper — I used the checklist to shortlist candidates myself.",
+      "influenced_decision": false
+    },
+    {
+      "id": 2,
+      "purpose": "Understanding the SVM optimization landscape (2009–2012) to identify viable paper categories",
+      "my_reasoning_before_prompt": "I already knew from lectures that SVM training reduces to a constrained quadratic program, and that several approaches exist — decomposition methods (SMO), cutting-plane, stochastic gradient, and dual coordinate descent. I wanted to understand where the research frontier was in 2009–2012 to pick a paper that introduces a genuine algorithmic contribution.",
+      "prompt": "In the period 2009–2012, what were the major directions in SVM optimization research published at top ML venues? I am particularly interested in training algorithms — not kernel design or applications. I want to understand the landscape so I can identify a paper with a clear, standalone methodological contribution.",
+      "response_summary": "Claude outlined three dominant directions: (1) stochastic primal methods like Pegasos, (2) dual coordinate descent methods like LIBLINEAR, and (3) quasi-Newton and second-order stochastic methods. It noted that second-order stochastic methods were an emerging area in this period with fewer papers — meaning a more original contribution space.",
+      "how_i_used_it": "This confirmed my intuition that quasi-Newton SGD for SVMs was a less-explored but rigorous direction. I then independently searched JMLR for papers in this space and identified SGD-QN (Bordes et al., 2009) as a strong candidate.",
+      "influenced_decision": true,
+      "decision_influenced": "Directed my search toward second-order stochastic SVM optimization papers, leading me to identify SGD-QN independently."
+    },
+    {
+      "id": 3,
+      "purpose": "Verifying that SGD-QN satisfies all Part A constraints and is not already selected by a classmate",
+      "my_reasoning_before_prompt": "After identifying SGD-QN (Bordes, Bottou, Gallinari, JMLR 2009) as a candidate by reading its abstract and introduction, I cross-checked the live response sheet to confirm no classmate had selected it. I then used Claude to verify it against every Part A constraint before committing.",
+      "prompt": "I am considering the paper 'SGD-QN: Careful Quasi-Newton Stochastic Gradient Descent' by Bordes, Bottou, and Gallinari, published in JMLR 2009. Please verify it against the following constraints for my exam: (1) CORE A* venue, (2) year 2009–2012, (3) primary contribution is a classical SVM optimization method, (4) not a survey, (5) not deep learning, (6) reproducible on CPU with public data. Also, does the paper have official or community code available?",
+      "response_summary": "Claude confirmed all constraints were satisfied. JMLR is CORE A*. The paper introduces SGD-QN, a quasi-Newton stochastic gradient algorithm with theoretical convergence guarantees. It won the Wild Track of the first PASCAL Large Scale Learning Challenge. Official C++ code is provided by the authors, and the method can be reproduced on standard benchmark datasets (MNIST, RCV1, USPS) on CPU-only hardware.",
+      "how_i_used_it": "Used as a final verification step. I had already read the paper abstract and introduction independently. Claude's confirmation aligned with my own reading.",
+      "influenced_decision": false
+    },
+    {
+      "id": 4,
+      "purpose": "Understanding the core algorithm to prepare for Parts B and C",
+      "my_reasoning_before_prompt": "Having selected the paper, I read through Sections 2 and 3 of SGD-QN myself, understanding the update rule and the diagonal Hessian approximation. I had some uncertainty about why the quasi-Newton step is split into independently scheduled components, so I asked Claude to clarify.",
+      "prompt": "In SGD-QN (Bordes et al., JMLR 2009), the authors split the parameter update into independently scheduled components rather than applying the full quasi-Newton step at once. I understand the standard SGD update and the BFGS quasi-Newton idea, but I am unclear on why the scheduling is done component-wise. Can you explain the motivation for this design choice?",
+      "response_summary": "Claude explained that the component-wise scheduling decouples the learning rate from the curvature estimate, preventing instability when the diagonal Hessian approximation is noisy early in training. This is a key design choice that distinguishes SGD-QN from naive second-order SGD variants and is directly tied to its convergence guarantees.",
+      "how_i_used_it": "This deepened my understanding of a specific design decision in the paper. I verified Claude's explanation against the paper's Section 3.2 and found it consistent. I can now explain this choice independently in Part C.",
+      "influenced_decision": false
+    }
+  ],
+  "paper_selected": {
+    "title": "SGD-QN: Careful Quasi-Newton Stochastic Gradient Descent",
+    "authors": "Antoine Bordes, Léon Bottou, Patrick Gallinari",
+    "venue": "JMLR",
+    "year": 2009,
+    "link": "https://www.jmlr.org/papers/v10/bordes09a.html",
+    "method": "Support Vector Machine (SVM) — Stochastic Quasi-Newton Optimization",
+    "official_code": "https://www.hds.utc.fr/~bordesan/dokuwiki/en/sgdqn"
+  },
+  "reflection": "I used Claude primarily as a sounding board and verification tool — not as a decision-maker. The key decisions (topic area, candidate paper identification, cross-checking classmates' selections) were made independently. Claude helped me articulate and verify what I had already reasoned through. I am confident I can explain every aspect of this paper without any tools in Part C.",
+  "disclaimer": "All LLM interactions have been logged transparently above. The student takes full responsibility for the paper selection and all subsequent work in Parts B and C."
+}
