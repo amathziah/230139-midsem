@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Task 1.3 — What the Paper Claims to Improve
+# **Paper:** SGD-QN: Careful Quasi-Newton Stochastic Gradient Descent
+# 
+# ---
+# 
+# ## Main Baseline
+# 
+# The primary baseline the paper compares against is **SVMSGD2** (Bottou, 2007) — a first-order stochastic gradient descent algorithm for linear SVMs that uses a skip-based lazy regularisation schedule (Figure 1, right) but applies only a uniform scalar learning rate `λ⁻¹/(t+t₀)` with no curvature-aware rescaling. A secondary comparison is against **oLBFGS** (Schraudolph et al., 2007), which represents the best competing second-order approach, and against **LibLinear** (Hsieh et al., 2008), the state-of-the-art dual solver.
+# 
+# ---
+# 
+# ## Limitation of SVMSGD2 Identified by the Paper
+# 
+# SVMSGD2 uses a single shared scalar learning rate for all feature dimensions. On ill-conditioned problems — where the Hessian has a large condition number κ (e.g. the Alpha and Delta datasets, which the paper describes as having *"relatively severe conditioning problems"*, Section 6) — the first-order update cannot adapt to the different curvature along different axes. As shown in Table 1 (Section 2.2), the required number of iterations to reach accuracy ρ scales as κ²/ρ for first-order SGD, compared to just 1/ρ for second-order SGD. This means SVMSGD2 needs many more passes over the data when features are poorly scaled or correlated, as demonstrated empirically in Figure 3 and Figure 4.
+# 
+# ---
+# 
+# ## How SGD-QN Overcomes This Limitation
+# 
+# SGD-QN introduces a *diagonal rescaling matrix* `B ≈ H⁻¹` that is estimated on-line via the secant equation (Eq. 6) and updated via a leaky average (Section 5.3). By multiplying each gradient component by the corresponding diagonal entry of `B`, the effective condition number is reduced, and the algorithm requires far fewer passes. Crucially, the reestimation of `B` is scheduled at the same frequency as the regularisation update (every `skip` iterations), so the quasi-Newton overhead adds less than 2× to the per-iteration cost, while reducing the required number of iterations by a factor proportional to κ².
+# 
+# ---
+# 
+# ## Condition Under Which SGD-QN Would NOT Outperform SVMSGD2
+# 
+# SGD-QN would fail to outperform SVMSGD2 when the training data is **already well-conditioned** — that is, when the Hessian of the primal cost is close to a scalar multiple of the identity (κ ≈ 1). In this regime, the first-order update already follows near-optimal directions, so the diagonal `B` provides no reduction in the number of required passes. Meanwhile, the additional cost per iteration of SGD-QN (computing the auxiliary gradient `gₜ₋₁(wₜ)` and updating all `d` entries of `B`) still applies — making each epoch slower than SVMSGD2. The net result is that SGD-QN uses approximately the same number of passes but takes longer per pass, making SVMSGD2 faster in wall-clock time. The paper implicitly acknowledges this: on the well-conditioned sparse RCV1 dataset (Table 5), SGD-QN takes 0.37 seconds per pass vs SVMSGD2's 0.20 seconds, and Figure 4 shows the test error gap between them is much smaller on RCV1 than on Alpha or Delta. In the extreme case of a perfectly conditioned problem (e.g. features with identical marginal variances and no correlation), the `B` estimates would converge to `λ⁻¹I` — the initial value — adding overhead with zero benefit.

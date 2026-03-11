@@ -4,12 +4,12 @@
     "test_accuracy": 0.735
   },
   "ablation2_no_skip_schedule": {
-    "final_cost": 4795.088000383124,
-    "test_accuracy": 0.745
+    "final_cost": 4795.096681581804,
+    "test_accuracy": 0.75
   },
   "full_sgdqn": {
-    "final_cost": 142.54444679601087,
-    "test_accuracy": 0.75
+    "final_cost": 142.4741082309143,
+    "test_accuracy": 0.7525
   },
   "failure_mode": {
     "dataset": "well-conditioned (28/30 informative, \u03bb=0.5)",
@@ -18,8 +18,8 @@
       "test_accuracy": 0.985
     },
     "sgdqn": {
-      "final_cost": 0.147407213148119,
-      "test_accuracy": 0.9825
+      "final_cost": 0.1485029287772629,
+      "test_accuracy": 0.98
     }
   }
 }
