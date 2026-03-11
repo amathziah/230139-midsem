@@ -1,0 +1,42 @@
+{
+  "student_name": "Jamathziah",
+  "roll_number": "230139",
+  "task_tag": "Task 3.2",
+  "code_used_verbatim": true,
+  "student_modification": "Adapted logic, renamed variables, added paper equation references, restructured for notebook format",
+  "declaration": "I confirm that all LLM interactions listed here are complete and accurate. All implementation decisions, ablation choices, and interpretations are my own.",
+  "interactions": [
+    {
+      "prompt": "What failure mode is directly connected to the assumptions identified in Task 1.2?",
+      "response_summary": "Suggested well-conditioned data (Assumption 2 violation) and non-stationary data (Assumption 3 violation)",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "How do I construct a well-conditioned classification dataset with sklearn?",
+      "response_summary": "Suggested make_classification with n_informative=n_features, class_sep=3, flip_y=0, large lambda",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "What is a concrete modification to SGD-QN that would address the well-conditioned failure?",
+      "response_summary": "Suggested condition-number diagnostic based on secant ratio variance; student wrote the suggestion",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "prompt": "What failure mode is directly connected to the assumptions identified in Task 1.2?",
+      "response_summary": "Suggested well-conditioned data (Assumption 2 violation) and non-stationary data (Assumption 3 violation)",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "How do I construct a well-conditioned classification dataset with sklearn?",
+      "response_summary": "Suggested make_classification with n_informative=n_features, class_sep=3, flip_y=0, large lambda",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "What is a concrete modification to SGD-QN that would address the well-conditioned failure?",
+      "response_summary": "Suggested condition-number diagnostic based on secant ratio variance; student wrote the suggestion",
+      "code_used_verbatim": false
+    }
+  ]
+}

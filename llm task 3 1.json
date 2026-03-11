@@ -1,0 +1,42 @@
+{
+  "student_name": "Jamathziah",
+  "roll_number": "230139",
+  "task_tag": "Task 3.1",
+  "code_used_verbatim": true,
+  "student_modification": "Adapted logic, renamed variables, added paper equation references, restructured for notebook format",
+  "declaration": "I confirm that all LLM interactions listed here are complete and accurate. All implementation decisions, ablation choices, and interpretations are my own.",
+  "interactions": [
+    {
+      "prompt": "Which two components of SGD-QN are most interesting to ablate?",
+      "response_summary": "Suggested (1) the B update mechanism and (2) the skip scheduling; student validated these choices against paper Section 5",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "How do I modify my SGdqn function to disable the B update?",
+      "response_summary": "Suggested adding a no_B_update flag; student implemented and added paper reference",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "What does it mean when ablating skip schedule causes the primal cost to explode?",
+      "response_summary": "Explained that naive per-step regularisation over-shrinks w; linked to Section 3 derivation",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "prompt": "Which two components of SGD-QN are most interesting to ablate?",
+      "response_summary": "Suggested (1) the B update mechanism and (2) the skip scheduling; student validated these choices against paper Section 5",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "How do I modify my SGdqn function to disable the B update?",
+      "response_summary": "Suggested adding a no_B_update flag; student implemented and added paper reference",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "What does it mean when ablating skip schedule causes the primal cost to explode?",
+      "response_summary": "Explained that naive per-step regularisation over-shrinks w; linked to Section 3 derivation",
+      "code_used_verbatim": false
+    }
+  ]
+}

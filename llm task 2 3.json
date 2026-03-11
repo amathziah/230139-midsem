@@ -1,0 +1,32 @@
+{
+  "student_name": "Jamathziah",
+  "roll_number": "230139",
+  "task_tag": "Task 2.3",
+  "code_used_verbatim": true,
+  "student_modification": "Adapted logic, renamed variables, added paper equation references, restructured for notebook format",
+  "declaration": "I confirm that all LLM interactions listed here are complete and accurate. All implementation decisions, ablation choices, and interpretations are my own.",
+  "interactions": [
+    {
+      "prompt": "Why is the primal cost higher for SGD-QN than SVMSGD2 in my experiment even though accuracy is better?",
+      "response_summary": "Explained that B-rescaled regularisation applies a different effective regularisation path",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "How should I honestly report a performance gap between my reproduction and the paper?",
+      "response_summary": "Suggested explaining dataset size, dimensionality, and lambda differences",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "prompt": "Why is the primal cost higher for SGD-QN than SVMSGD2 in my experiment even though accuracy is better?",
+      "response_summary": "Explained that B-rescaled regularisation applies a different effective regularisation path",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "How should I honestly report a performance gap between my reproduction and the paper?",
+      "response_summary": "Suggested explaining dataset size, dimensionality, and lambda differences",
+      "code_used_verbatim": false
+    }
+  ]
+}

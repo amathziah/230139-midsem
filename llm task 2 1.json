@@ -1,0 +1,32 @@
+{
+  "student_name": "Jamathziah",
+  "roll_number": "230139",
+  "task_tag": "Task 2.1",
+  "code_used_verbatim": false,
+  "student_modification": "N/A \u2014 no code generated for this task",
+  "declaration": "I confirm that all LLM interactions listed here are complete and accurate. All implementation decisions, ablation choices, and interpretations are my own.",
+  "interactions": [
+    {
+      "prompt": "What sklearn dataset would best demonstrate the advantage of SGD-QN over plain SGD?",
+      "response_summary": "Suggested make_classification with high n_redundant to create ill-conditioned Hessian",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "How should I preprocess features for an SGD-based SVM?",
+      "response_summary": "StandardScaler recommended; explained why scale matters for condition number",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "prompt": "What sklearn dataset would best demonstrate the advantage of SGD-QN over plain SGD?",
+      "response_summary": "Suggested make_classification with high n_redundant to create ill-conditioned Hessian",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "How should I preprocess features for an SGD-based SVM?",
+      "response_summary": "StandardScaler recommended; explained why scale matters for condition number",
+      "code_used_verbatim": false
+    }
+  ]
+}

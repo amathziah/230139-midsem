@@ -1,0 +1,62 @@
+{
+  "student_name": "Jamathziah",
+  "roll_number": "230139",
+  "task_tag": "Task 2.2",
+  "code_used_verbatim": true,
+  "student_modification": "Adapted logic, renamed variables, added paper equation references, restructured for notebook format",
+  "declaration": "I confirm that all LLM interactions listed here are complete and accurate. All implementation decisions, ablation choices, and interpretations are my own.",
+  "interactions": [
+    {
+      "prompt": "Help me implement the SGD-QN algorithm from Figure 2 of the paper in Python",
+      "response_summary": "Provided skeleton structure; student adapted with proper paper references and equation annotations",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "Why is my SGD-QN implementation numerically unstable (NaN)?",
+      "response_summary": "Identified t0 too small causing huge initial learning rate; recommended t0 ~ 1/lambda",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "How should I implement the leaky average update for B: Bii <- Bii + (2/r)(ratio_i - Bii)?",
+      "response_summary": "Explained vectorised numpy implementation and safe division handling",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "What is the squared hinge loss and why does the paper use it instead of standard hinge?",
+      "response_summary": "Explained C2 differentiability requirement from Section 2.1",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "How do I implement the skip scheduling trick from SVMSGD2?",
+      "response_summary": "Explained the lazy regularisation decoupling from Section 3",
+      "code_used_verbatim": true
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "prompt": "Help me implement the SGD-QN algorithm from Figure 2 of the paper in Python",
+      "response_summary": "Provided skeleton structure; student adapted with proper paper references and equation annotations",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "Why is my SGD-QN implementation numerically unstable (NaN)?",
+      "response_summary": "Identified t0 too small causing huge initial learning rate; recommended t0 ~ 1/lambda",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "How should I implement the leaky average update for B: Bii <- Bii + (2/r)(ratio_i - Bii)?",
+      "response_summary": "Explained vectorised numpy implementation and safe division handling",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "What is the squared hinge loss and why does the paper use it instead of standard hinge?",
+      "response_summary": "Explained C2 differentiability requirement from Section 2.1",
+      "code_used_verbatim": true
+    },
+    {
+      "prompt": "How do I implement the skip scheduling trick from SVMSGD2?",
+      "response_summary": "Explained the lazy regularisation decoupling from Section 3",
+      "code_used_verbatim": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "student_name": "Jamathziah",
+  "roll_number": "230139",
+  "task_tag": "Task 1.1",
+  "code_used_verbatim": false,
+  "student_modification": "N/A \u2014 no code generated for this task",
+  "declaration": "I confirm that all LLM interactions listed here are complete and accurate. All implementation decisions, ablation choices, and interpretations are my own.",
+  "interactions": [
+    {
+      "prompt": "Explain the SGD-QN algorithm from the paper step by step as if teaching a classmate who knows SGD but not this paper",
+      "response_summary": "Provided step-by-step walkthrough of Figure 2 pseudocode, connecting each line to the paper's equations",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "What is the purpose of initialising B = \u03bb\u207b\u00b9I in SGD-QN?",
+      "response_summary": "Explained that this replicates first-order SGD initially, ensuring safe warm-start",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "Why does SGD-QN schedule the B update at the same frequency as the regularisation update?",
+      "response_summary": "Explained the amortisation argument from Section 5.3",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "prompt": "Explain the SGD-QN algorithm from the paper step by step as if teaching a classmate who knows SGD but not this paper",
+      "response_summary": "Provided step-by-step walkthrough of Figure 2 pseudocode, connecting each line to the paper's equations",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "What is the purpose of initialising B = \u03bb\u207b\u00b9I in SGD-QN?",
+      "response_summary": "Explained that this replicates first-order SGD initially, ensuring safe warm-start",
+      "code_used_verbatim": false
+    },
+    {
+      "prompt": "Why does SGD-QN schedule the B update at the same frequency as the regularisation update?",
+      "response_summary": "Explained the amortisation argument from Section 5.3",
+      "code_used_verbatim": false
+    }
+  ]
+}
