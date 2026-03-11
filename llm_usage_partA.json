@@ -1,0 +1,103 @@
+{
+  "student_metadata": {
+    "name": "Jamathziah",
+    "roll_number": "230139",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part A",
+    "submission_date": "2026-03-01"
+  },
+
+  "llm_tools_used": [
+    {
+      "tool_name": "Claude",
+      "model": "claude-sonnet-4",
+      "provider": "Anthropic"
+    }
+  ],
+
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-02-28",
+      "tool_name": "Claude",
+      "model": "claude-sonnet-4",
+      "purpose": "Structuring a checklist to evaluate candidate papers under exam constraints",
+      "prompt": "I am selecting a research paper for my Advanced Machine Learning mid-semester exam (Part A). The constraints are: published 2008–2013 (preferably 2010–2012), from a CORE A* venue (NeurIPS, ICML, AISTATS, KDD, JMLR), primary contribution must be a classical method in SVM, GMM, or Time Series. Deep learning papers, survey papers, and purely empirical papers are disallowed. Can you help me structure a checklist to evaluate candidate papers?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Helped me consolidate the constraints into a structured checklist for systematic paper filtering.",
+      "student_verification": "I independently verified all constraints by reading the official exam document and manually checking venue rankings and publication year for shortlisted papers.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-02-28",
+      "tool_name": "Claude",
+      "model": "claude-sonnet-4",
+      "purpose": "Understanding SVM optimization research directions between 2009–2012",
+      "prompt": "In the period 2009–2012, what were the major directions in SVM optimization research published at top ML venues? I am particularly interested in training algorithms — not kernel design or applications. I want to understand the landscape so I can identify a paper with a clear, standalone methodological contribution.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Helped me identify stochastic and quasi-Newton optimization as active research directions during that period.",
+      "student_verification": "I verified the research directions by cross-checking ICML and JMLR archives from 2009–2012 and reading abstracts of relevant papers.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 3,
+      "date": "2026-02-29",
+      "tool_name": "Claude",
+      "model": "claude-sonnet-4",
+      "purpose": "Verifying that SGD-QN satisfies all Part A constraints",
+      "prompt": "I am considering the paper 'SGD-QN: Careful Quasi-Newton Stochastic Gradient Descent' by Bordes, Bottou, and Gallinari, published in JMLR 2009. Please verify it against the following constraints for my exam: (1) CORE A* venue, (2) year 2009–2012, (3) primary contribution is a classical SVM optimization method, (4) not a survey, (5) not deep learning, (6) reproducible on CPU with public data. Also, does the paper have official or community code available?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Served as a final verification step to confirm alignment with exam constraints before submission.",
+      "student_verification": "I independently checked JMLR’s CORE ranking, publication year, paper content, and official code repository linked by the authors.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "claude-sonnet-4",
+      "purpose": "Clarifying a specific algorithmic design decision in SGD-QN",
+      "prompt": "In SGD-QN (Bordes et al., JMLR 2009), the authors split the parameter update into independently scheduled components rather than applying the full quasi-Newton step at once. I understand the standard SGD update and the BFGS quasi-Newton idea, but I am unclear on why the scheduling is done component-wise. Can you explain the motivation for this design choice?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Clarified the stability motivation behind component-wise scheduling in quasi-Newton stochastic updates.",
+      "student_verification": "I verified the explanation by rereading Section 3 of the paper and matching it to the convergence discussion provided by the authors.",
+      "confidence_level": 4
+    }
+  ],
+
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 2,
+      "prompt": "In the period 2009–2012, what were the major directions in SVM optimization research published at top ML venues? I am particularly interested in training algorithms — not kernel design or applications. I want to understand the landscape so I can identify a paper with a clear, standalone methodological contribution.",
+      "why_important": "This shaped my research direction toward second-order stochastic optimization methods and directly influenced the paper selection."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 1,
+      "prompt": "I am selecting a research paper for my Advanced Machine Learning mid-semester exam (Part A). The constraints are: published 2008–2013 (preferably 2010–2012), from a CORE A* venue (NeurIPS, ICML, AISTATS, KDD, JMLR), primary contribution must be a classical method in SVM, GMM, or Time Series. Deep learning papers, survey papers, and purely empirical papers are disallowed. Can you help me structure a checklist to evaluate candidate papers?",
+      "why_important": "Provided a structured filtering framework that ensured feasibility and compliance with exam rules."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "I am considering the paper 'SGD-QN: Careful Quasi-Newton Stochastic Gradient Descent' by Bordes, Bottou, and Gallinari, published in JMLR 2009. Please verify it against the following constraints for my exam: (1) CORE A* venue, (2) year 2009–2012, (3) primary contribution is a classical SVM optimization method, (4) not a survey, (5) not deep learning, (6) reproducible on CPU with public data. Also, does the paper have official or community code available?",
+      "why_important": "Acted as a final compliance validation before committing to the selected paper."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "In SGD-QN (Bordes et al., JMLR 2009), the authors split the parameter update into independently scheduled components rather than applying the full quasi-Newton step at once. I understand the standard SGD update and the BFGS quasi-Newton idea, but I am unclear on why the scheduling is done component-wise. Can you explain the motivation for this design choice?",
+      "why_important": "Deepened conceptual understanding of the core methodological contribution."
+    }
+  ],
+
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part A.",
+    "understanding acknowledged": true,
+    "signature": "Jamathziah",
+    "date": "2026-03-01"
+  }
+}
